@@ -15,16 +15,12 @@
       referrerpolicy="no-referrer"
     />
     <!--Font Awesome  6.4.0-->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <!--Css-->
   </head>
   <body>
     <div id="app" class="text">
       <h1>{{message}}</h1>
       <ul>
-        <li v-for="(email, index) in emails" :key="index">
-          {{ index + 1 }} - {{ email }}
-        </li>
+        <li v-for="(email, index) in emails" :key="index">{{email}}</li>
       </ul>
     </div>
 

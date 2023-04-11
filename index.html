@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- css -->
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <!--Font Awesome-->
+    <title>Vue-email-list</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -26,8 +21,11 @@
   <body>
     <div id="app" class="text">
       <h1>{{message}}</h1>
-
-      <h4>{{email}}</h4>
+      <ul>
+        <li v-for="(email, index) in emails" :key="index">
+          {{ index + 1 }} - {{ email }}
+        </li>
+      </ul>
     </div>
 
     <script

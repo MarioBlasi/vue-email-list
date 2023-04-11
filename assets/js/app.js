@@ -7,21 +7,17 @@ createApp({
       emails: [],
     };
   },
-  created() {
+  mounted() {
+    let emailList = [];
     for (let i = 0; i < 10; i++) {
-      this.getEmail();
+      axios
+        .get("https://flynn.boolean.careers/exercises/api/random/mail")
+        .then((response) => {
+          emailList.push(response.data);
+          if (emailList.length === 10) {
+            this.emails = emailList;
+          }
+        });
     }
-  },
-  methods: {
-    //async per dichiarare che è una funzione asincrona.
-    async getEmail() {
-      // Il metodo fetch prende l'URL dell'API come argomento e restituisce una
-      //promessa contenente la risposta alla richiesta.
-      const response = await fetch(
-        "https://flynn.boolean.careers/exercises/api/random/mail"
-      );
-      const data = await response.json();
-      this.emails.push(data.response);
-    },
   },
 }).mount("#app");

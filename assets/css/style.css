@@ -1,14 +1,17 @@
 .text {
   display: flex;
   justify-content: space-evenly;
-  background-color: rgba(0, 255, 255, 0.377);
+  background-color: rgba(0, 255, 255, 0.116);
   border-radius: 10%;
   box-shadow: 5px 5px 15px 5px #000000;
 }
 li {
   list-style-type: none;
   padding: 1rem;
-  background-color: rgba(127, 255, 212, 0.788);
+  background-color: rgba(240, 127, 255, 0.048);
   border-bottom: 1px solid blue;
   border-radius: 20%;
+}
+li:hover {
+  background-color: rgba(178, 241, 95, 0.39);
 }
